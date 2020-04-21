@@ -1,7 +1,7 @@
 
-// const encode = (data) => {
-// 	return Object.keys(data).map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])).join('&');
-// };
+const encode = (data) => {
+	return Object.keys(data).map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])).join('&');
+};
 
 const processForm = (form) => {
 	const data = new FormData(form);
