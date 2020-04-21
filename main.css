@@ -1,0 +1,239 @@
+
+/* 
+Isabelline: #ECEBE4
+Tuscany: #CC998D
+Pacific Blue: #2CA5B7
+Sea Green: #16F4D0
+Indigo Dye: #153B50
+*/
+
+:root {
+	--cl-dark: #153b50;
+	--cl-main: #2ca5b7;
+	--cl-highlight: #16f4d0;
+	--cl-soft: #cc998d;
+	/* --cl-white-off: #ecebe4; */
+	--cl-white-off: #ebebeb;
+	--cl-black: #000000;
+	--cl-white: #ffffff;
+
+	--font-1: 'Roboto';
+	/* font2 weights 500, 600, 800 */
+	--font-2: 'Baloo Bhaina 2';
+}
+body {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  margin: 0;
+  line-height: 1.15; /* 1 */
+}
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.wrapper {
+	max-width: 90%;
+	margin: 0 auto;
+}
+h1 {
+	margin: 0;
+}
+.lead-header {
+	background: var(--cl-dark);
+	padding: 4em 0;
+}
+.lead-header .head {
+	color: var(--cl-main);
+	font-size: 1.5em;
+	margin-top: 0.2em;
+	font-family: var(--font-2);
+}
+.lead-header .subhead {
+	color: var(--cl-white-off);
+	font-size: 0.6em;
+}
+.lead-main--layout {
+	display: flex;
+	flex-direction: column;
+	padding: 4em 0;
+}
+
+.main-content img {
+	margin-top: 2em;
+	max-width: 100%;
+}
+.main-content ul {
+	margin-top: 2em;
+}
+
+.main-content ul li {
+	display: flex;
+	align-items: center;
+	margin-bottom: 1.4em;
+	font-size: 18px;
+}
+
+.main-content ul li img {
+	min-width: 64px;
+	max-width: 64px;
+	margin: 0 1em;
+}
+
+.main-content ul li .bullet-hightlight {
+	font-weight: bolder;
+}
+
+.main-form {
+	background: var(--cl-white-off);
+	margin-top: 2em;
+	padding: 3em 2em;
+	border-radius: 1em;
+	height: min-content;
+}
+.main-form form div {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 1.4em;
+}
+.main-form form label {
+	margin-bottom: 0.5em;
+}
+
+.main-form input {
+	padding: 0.5em;
+	font-size: 18px;
+}
+
+.main-form input:focus {
+	border-color: var(--cl-highlight);
+}
+
+.main-form .radio-container {
+	/* display: flex;
+	flex-direction: row; */
+	/* justify-content: space-between; */
+}
+.main-form .radio-group {
+	display: flex;
+	flex-direction: row;
+	margin: 0;
+	margin-left: 1em;
+}
+
+.main-form .radio {
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	line-height: 0;
+	margin: 0;
+	margin-left: 2em;
+	width: 50%;
+}
+
+.main-form .radio label {
+	margin: 0;
+	margin-left: .5em;
+}
+
+.main-form button {
+	background: var(--cl-main);
+	color: var(--cl-white);
+	border: none;
+	border-radius: .2em;
+	padding: 1.5em 0.5em;
+	display: block;
+	margin-top: 2em;
+	width: 100%;
+	font-size: 1.25em;
+	font-family: var(--font-2);
+	font-weight: 800;
+	transition: all .4s ease;
+	border: 6px solid white;
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+.main-form button:hover {
+	background: var(--cl-highlight);
+}
+.main-form button:active {
+	background: var(--cl-white);
+
+  color: var(--cl-highlight);
+  border-color: var(--cl-highlight);
+  box-shadow: 0 6px 8px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -3px rgba(0, 0, 0, 0.02);
+
+}
+
+.lead-footer {
+	padding: 2em 0 1em 0;
+	background: var(--cl-black);
+	color: var(--cl-white-off);
+}
+
+.footer-layout {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.lead-footer .logo {
+	width: 200px;
+	opacity: 0.2;
+	margin: 1em 0;
+}
+.lead-footer ul li:first-of-type {
+	margin-bottom: 1em;
+}
+.lead-footer ul li div {
+	opacity: 0.4;
+	margin-bottom: .4em;
+}
+
+.lead-footer ul li a {
+	font-size: 22px;
+	color: var(--cl-white);
+	font-family: var(--font-2);
+	opacity: 0.6;
+	transition: opacity 0.3s ease;
+}
+
+.lead-footer ul li a:hover {
+	opacity: 1.0;
+}
+@media only screen and (min-width: 980px) {
+	.wrapper {
+		max-width: 1080px;
+	}
+	.lead-header .head {
+		color: var(--cl-main);
+		width: 18ch;
+		font-size: 2em;
+	}
+	.lead-header .subhead {
+		color: var(--cl-white-off);
+		font-size: 0.6em;
+	}
+
+	.lead-main--layout {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	.main-content img {
+		margin: 0 1em;
+		margin-top: 2em;
+	}
+	.main-content {
+		width: 60%;
+	}
+	.main-form {
+		width: 30%;
+	}
+	.footer-layout {
+		flex-direction: row;
+	}
+	.lead-footer .logo {
+		width: 400px;
+		opacity: 0.2;
+		margin: 0;
+	}
+}
