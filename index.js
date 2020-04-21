@@ -25,8 +25,8 @@ const processForm = (form) => {
 const leadForm = document.getElementById('lead-form');
 if (leadForm) {
 	leadForm.addEventListener('submit', (e) => {
-		processForm(leadForm);
 		e.preventDefault();
+		processForm(leadForm);
 	});
 }
 
