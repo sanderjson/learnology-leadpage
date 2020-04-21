@@ -26,11 +26,11 @@ if (leadForm) {
 	leadForm.addEventListener('submit', (e) => {
     e.preventDefault();
     let formData = {
-      firstName: e.target.elements[0].value,
-      lastName: e.target.elements[1].value,
-      email: e.target.elements[2].value,
-      isParent: e.target.elements[3].checked? true: false,
-      isStudent: e.target.elements[5].checked? true: false,
+      firstName: e.target.elements["first-name"].value,
+      lastName:e.target.elements["last-name"].value,
+      email: e.target.elements["email"].value,
+      isParent: e.target.elements["parent-yes"].checked? true: false,
+      isStudent: e.target.elements["student-yes"].checked? true: false,
     }
     console.log("formData from listener", formData)
     processForm(formData)
