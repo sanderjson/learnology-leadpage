@@ -1,8 +1,9 @@
 
-const encode = (data) => {
-  console.log("form data from within encode", data)
-	return Object.keys(data).map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])).join('&');
-};
+  const encode = (data) => {
+    return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&");
+  }
 
 const processForm = (formData) => {
 	fetch('/', {
