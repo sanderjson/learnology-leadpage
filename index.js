@@ -9,7 +9,7 @@ const processForm = (formData) => {
 	fetch('/', {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-		body: encode({ 'form-name': 'lead-form', ...dataData })
+		body: encode({ 'form-name': 'lead-form', ...formData })
 	})
 		.then(() => {
 			console.log('Form has been submitted!');
