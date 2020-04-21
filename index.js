@@ -1,5 +1,6 @@
 
 const encode = (data) => {
+  console.log("form data from within encode", data)
 	return Object.keys(data).map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])).join('&');
 };
 
@@ -10,7 +11,8 @@ const processForm = (formData) => {
 		body: encode({ 'form-name': 'lead-magnet', ...formData })
 	})
 		.then(() => {
-			console.log('Form has been submitted!');
+      console.log('Form has been submitted!');
+      console.log("form data from encode", encode({ 'form-name': 'lead-magnet', ...formData }))
       downloadFile()
 		})
 		.catch((error) => {
@@ -30,6 +32,7 @@ if (leadForm) {
       isParent: e.target.elements[3].checked? true: false,
       isStudent: e.target.elements[5].checked? true: false,
     }
+    console.log("formData from listener", formData)
     processForm(formData)
   });
 }
