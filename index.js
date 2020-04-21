@@ -15,7 +15,7 @@ const processForm = (form) => {
       downloadFile()
 		})
 		.catch((error) => {
-			console.log('error', error);
+			console.log('Form submit error: ', error);
 		});
 };
 
