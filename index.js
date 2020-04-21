@@ -49,3 +49,7 @@ const downloadFile = () => {
 	window.URL.revokeObjectURL(a.href);
 	document.body.removeChild(a);
 }
+
+const test = () => {
+  console.log("TEST")
+}
