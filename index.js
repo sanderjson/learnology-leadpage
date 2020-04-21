@@ -1,3 +1,4 @@
+
 const encode = (data) => {
 	return Object.keys(data).map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])).join('&');
 };
@@ -11,18 +12,10 @@ const processForm = (form) => {
 	})
 		.then(() => {
 			console.log('Form has been submitted!');
-			downloadFile(
-				'Free Download:The Ultimate Guide to AcademicSuccess',
-				'Learnology-Ultimate-Home-Study-Guide-web.pdf'
-			);
+      downloadFile()
 		})
-		// .then(() => {
-		//   form.innerHTML = `<div class="form--success">Almost there! Check your inbox for a confirmation e-mail.</div>`;
-		// })
 		.catch((error) => {
 			console.log('error', error);
-
-			// form.innerHTML = `<div class="form--error">Error: ${error}</div>`;
 		});
 };
 
@@ -34,22 +27,13 @@ if (leadForm) {
 	});
 }
 
-// The function injects an <a> element into the body, sets it URL to a Blob value to the text content of the destination file, and clicks the element to trigger the download.  The element remains hidden during the process and is removed from the DOM immediately after the click() call.  As soon as the function is called, the browser's download prompt is displayed.
-function downloadFile(data, fileName, type = 'text/plain') {
-	// Create an invisible A element
-	const a = document.createElement('a');
+const downloadFile = () => {
+  	const a = document.createElement('a');
 	a.style.display = 'none';
+  a.href = './static/Learnology-Ultimate-Home-Study-Guide-web.pdf';
+  a.setAttribute('download', 'Learnology-Ultimate-Home-Study-Guide');
 	document.body.appendChild(a);
-
-	// Set the HREF to a Blob representation of the data to be downloaded
-	a.href = window.URL.createObjectURL(new Blob([ data ], { type }));
-
-	// Use download attribute to set set desired file name
-	a.setAttribute('download', fileName);
-
-	// Trigger the download by simulating click
 	a.click();
-
 	// Cleanup
 	window.URL.revokeObjectURL(a.href);
 	document.body.removeChild(a);
