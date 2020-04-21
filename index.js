@@ -1,9 +1,9 @@
 const processForm = (form) => {
 	const data = new FormData(form);
-	data.append('form-name', 'lead-form');
 	fetch('/', {
-		method: 'POST',
-		body: data
+    method: 'POST',
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: encode({ "form-name": "lead-form", data })
 	})
 		.then(() => {
 			console.log('Form has been submitted!');
@@ -21,7 +21,8 @@ const processForm = (form) => {
 const leadForm = document.getElementById('lead-form');
 if (leadForm) {
 	leadForm.addEventListener('submit', (e) => {
+    processForm(leadForm);
 		e.preventDefault();
-		processForm(leadForm);
+    
 	});
 }
