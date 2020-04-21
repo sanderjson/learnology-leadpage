@@ -19,11 +19,11 @@ const processForm = (form) => {
 		});
 };
 
-const leadForm = document.getElementById('lead-form');
+const leadForm = document.getElementById('lead-magnet');
 if (leadForm) {
 	leadForm.addEventListener('submit', (e) => {
+    processForm(leadForm);
 		e.preventDefault();
-		processForm(leadForm);
 	});
 }
 
