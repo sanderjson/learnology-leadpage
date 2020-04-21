@@ -4,12 +4,10 @@ const encode = (data) => {
 };
 
 const processForm = (formData) => {
-  // const data = new FormData(form);
-  // console.log(data)
 	fetch('/', {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-		body: encode({ 'form-name': 'lead-form', ...formData })
+		body: encode({ 'form-name': 'lead-magnet', ...formData })
 	})
 		.then(() => {
 			console.log('Form has been submitted!');
@@ -21,7 +19,7 @@ const processForm = (formData) => {
 };
 
 const leadForm = document.getElementById('lead-magnet');
-// console.log(leadForm)
+
 if (leadForm) {
 	leadForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -32,7 +30,6 @@ if (leadForm) {
       isParent: e.target.elements[3].checked? true: false,
       isStudent: e.target.elements[5].checked? true: false,
     }
-    // console.log(formData)
     processForm(formData)
   });
 }
