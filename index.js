@@ -1,14 +1,16 @@
 
-const encode = (data) => {
-	return Object.keys(data).map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])).join('&');
-};
+// const encode = (data) => {
+// 	return Object.keys(data).map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])).join('&');
+// };
 
 const processForm = (form) => {
-	const data = new FormData(form);
+  const data = new FormData(form);
+  data.append('username', 'Chris');
+  console.log(data)
 	fetch('/', {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-		body: encode({ 'form-name': 'lead-form', data })
+		body: { 'form-name': 'lead-form', ...data }
 	})
 		.then(() => {
 			console.log('Form has been submitted!');
@@ -20,6 +22,7 @@ const processForm = (form) => {
 };
 
 const leadForm = document.getElementById('lead-magnet');
+console.log(leadForm)
 if (leadForm) {
 	leadForm.addEventListener('submit', (e) => {
 		e.preventDefault();
